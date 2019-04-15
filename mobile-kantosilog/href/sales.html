@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Kanto Silog-Dashboard</title>
+
+  <link rel="stylesheet" href="../mdb/bootstrap.min.css">
+  <link rel="stylesheet" href="../mdb/mdb.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../mdb/mystyle2.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <link rel="stylesheet" href="../mdb/mystyle3.css">
+  <link rel="icon" href="../images/Logo.png">
+</head>
+<body class="hidden-sn grey-skin">
+
+
+
+  <header>
+    <!-- Sidebar navigation -->
+    <div id="slide-out" class="side-nav sn-bg-4">
+      <ul class="custom-scrollbar">
+        <!-- Logo -->
+        <li>
+          <div class="social">
+            <a href="#"><img src="../images/avatar.png" style="height:60px;width:60px"></a>
+            <a href="#"><p id="htmlFName" class="white-text" style="margin-top: -10px; font-size: 15px"></p></a>
+            <a href="#"><p id="htmlEmail" class="white-text" style="margin-top: -30px; font-size:15px"></p></a>
+          </div>
+        </li>
+        <!--/. Logo -->
+        <!--Social-->
+
+        <!--/Social-->
+        <!--Search Form-->
+      <!-- <li>
+        <form class="search-form" role="search">
+          <div class="form-group md-form mt-0 pt-1 waves-light">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+      </li> -->
+      <!--/.Search Form-->
+      <!-- Side navigation links -->
+      <li>
+        <ul class="collapsible collapsible-accordion">
+          <li><a href="index.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="dashboard.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-columns"></i> Dashboard</a></li>
+          <li><a href="sales.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-chart-line"></i> Sales</a></li>
+          <li><a href="inventory.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-list"></i> Inventory</a></li>
+          <li><a href="Purchase.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-receipt"></i> Purchase</a></li>
+          <li><a href="orders.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-file-invoice-dollar"></i> Orders</a></li>
+          <li><a href="invlogs.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-clipboard-list"></i> Inventory Logs</a></li>
+          <li><a href="topseller.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-check-double"></i> Top Seller</a></li>
+          <li><a href="#" class="collapsible-header waves-effect" onclick="logOut()"><i class="fas fa-power-off"></i>
+          Logout</a></li>
+        </ul>
+
+
+      </li>
+
+      <!--/. Side navigation links -->
+    </ul>
+    <div class="sidenav-bg mask-strong"></div>
+  </div>
+  <!--/. Sidebar navigation -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+    <!-- SideNav slide-out button -->
+    <div class="float-left">
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+    </div>
+    <!-- Breadcrumb-->
+    <div class="breadcrumb-dn mr-auto">
+      <p>Kanto Silog </p>
+    </div>
+
+  </nav>
+
+</header>
+
+<main class="mt-5 pt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="text-center"><b>SALES REPORT</b></h3>
+      </div>
+    </div><br>
+
+    <div class="card">
+      <div class="card-body">
+
+        <div class="col-12"></div>
+        <div class="row">
+          <div class="col-6">
+            <div class="md-form">
+              <select class="browser-default custom-select" id="salesReport">
+                <option selected>Select</option>
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="md-form">
+              <button class="btn btn-sm aqua-gradient" type="submit" onclick="viewSalesReport()">View</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+
+        <div class="card z-depth-1" data-toggle="collapse"  aria-expanded="true" href="#multiCollapseExample1" role="tab" aria-expanded="true" aria-controls="multiCollapseExample1">
+
+          <div class="card-title"><br>
+            <center><button type="button" class="btn aqua-gradient btn-rounded" style="margin-top: -50px;"><i class="fa fa-calendar"></i></button></center>    <br>
+            <h4 style="text-align: center;" class="blue-text" id="name"></h4>
+            <p class="grey-text" style="text-align: center;"></p>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card card-body">
+                <h1 style="text-align: center;" class="blue-text"><i class="fa fa-money"></i></h1>
+                <h3 style="text-align: center;" id="sales"></h3>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div><br><br>
+
+<!--     <div class="row">
+      <div class="col-12">
+
+        <div class="card z-depth-1" data-toggle="collapse"  aria-expanded="true" href="#multiCollapseExample2" role="tab" aria-expanded="false" aria-controls="multiCollapseExample1">
+
+          <div class="card-title"><br>
+            <center><button type="button" class="btn aqua-gradient btn-rounded" style="margin-top: -50px;"><i class="fa fa-calendar"></i></button></center><br>
+            <h4 style="text-align: center;" class="blue-text"> WEEKLY</h4>
+            <p class="grey-text" style="text-align: center;"></p>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <div class="card card-body">
+                  <h1 style="text-align: center;" class="blue-text"><i class="fa fa-money"></i></h1>
+                  <h3 style="text-align: center;" id="weekly">P. 2,500.00 </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div><br><br> -->
+
+  <!--   <div class="row">
+      <div class="col-12">
+
+        <div class="card z-depth-1" data-toggle="collapse"  aria-expanded="true" href="#multiCollapseExample3" role="tab" aria-expanded="false" aria-controls="multiCollapseExample1">
+
+          <div class="card-title"><br>
+            <center><button type="button" class="btn aqua-gradient btn-rounded" style="margin-top: -50px;"><i class="fa fa-calendar"></i></button></center><br>
+            <h4 style="text-align: center;" class="blue-text"> MONTHLY</h4>
+            <p class="grey-text" style="text-align: center;"></p>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample3">
+                <div class="card card-body">
+                  <h1 style="text-align: center;" class="blue-text"><i class="fa fa-money"></i></h1>
+                  <h3 style="text-align: center;" id="monthly">P. 2,500.00 </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div><br> -->
+   <!--  <div class="row">
+      <div class="col-12">
+
+        <div class="card z-depth-1" data-toggle="collapse"  aria-expanded="true" href="#multiCollapseExample4" role="tab" aria-expanded="false" aria-controls="multiCollapseExample1">
+
+          <div class="card-title"><br>
+            <center><button type="button" class="btn aqua-gradient btn-rounded" style="margin-top: -50px;"><i class="fa fa-calendar"></i></button></center><br>
+            <h4 style="text-align: center;" class="blue-text"> YEARLY</h4>
+            <p class="grey-text" style="text-align: center;"></p>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample4">
+                <div class="card card-body">
+                  <h1 style="text-align: center;" class="blue-text"><i class="fa fa-money"></i></h1>
+                  <h3 style="text-align: center;" id="yearly">P. 2,500.00 </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div><br> -->
+  </div>
+
+</main>
+
+
+</body>
+
+<script type="text/javascript" src="../mdb/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../mdb/popper.min.js"></script>
+<script type="text/javascript" src="../mdb/mdb.min.js"></script>
+<script type="text/javascript" src="../mdb/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/mdb.js"></script>
+<script type="text/javascript" src="../js/sweetalert.min.js"></script>
+<script type="text/javascript" src="../js/authentication.js"></script>
+<script type="text/javascript" src="../js/sales.js"></script>
+</html>

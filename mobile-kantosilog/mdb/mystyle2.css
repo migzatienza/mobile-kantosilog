@@ -1,0 +1,77 @@
+.colorNgFont {
+	color:#e5e8e3;
+
+}
+#row2 {
+	margin-top: 15px;
+}
+#icons {
+	padding-top: 10px;
+	position: center!important;
+	color:#e5e8e3;
+}
+.card{
+	border-radius: 0px!important;
+}
+
+#imgLogo {
+	height:50px!important;
+	width:50px!important;
+	border-radius:0px!important;
+}
+.CardTitle{
+	margin-top: 25px !important;
+	margin-left: -40px !important;
+}
+.SalesIcon{
+	background-color: #2598f3 !important;
+	border: 10px solid #2598f3;
+	border-radius: 100% !important;
+}
+.PurchaseIcon{
+	background-color: #3333f3 !important;
+	border: 10px solid #3333f3;
+	border-radius: 100% !important;
+}
+.StockIcon{
+	background-color: #ea2626 !important;
+	border: 10px solid #ea2626;
+	border-radius: 100% !important;
+}
+.CardHead{
+	font-style: bold !important;
+}
+.StockChart{
+	width: 100vw !important;
+}
+.OrderImage{
+	height: 80px !important;
+	width: 80px !important;
+	border-radius: 100% !important;
+}
+
+.text{
+	font-size: 15px !important;
+}
+.OrderNow{
+	top: 15px !important;
+	right: -130px !important;
+
+}
+.Price{
+	top: -15px !important;	
+	right: -15px !important;
+	float: right !important;
+	font-size: 20px !important;
+	color: grey !important;
+	position: absolute;
+}
+
+
+
+
+
+
+
+
+

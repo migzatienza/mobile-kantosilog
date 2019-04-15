@@ -1,0 +1,50 @@
+.img{
+	width: 180px;
+	height: 180px;
+	margin-top: -50px;
+}
+.classic-tabs{
+	padding-top: 30px;
+	padding-right: 45px;
+	padding-left: 45px;
+	position: justify!important;
+	margin-top:-30px!important;
+}
+.classic-tabs li a {
+	font-size: .890rem;
+}
+.nav.tabs-cyan{
+	background-color: #eee!important; 
+}
+.nav-item > a{
+	font-size: 2em;
+}
+.nav-link.waves-light.active{
+	color: #24466b!important;
+}
+
+.mt-small{
+	margin-top:20px;
+}
+
+.padded-small {
+	padding: 30px;
+}
+
+.login-container {
+	position: relative;
+
+	background: #eee;
+}
+.login-content {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+
+	height: 100vh;
+}
+.btn-danger {
+	background-color: #0c1829!important;
+	color: #fff!important;
+}
