@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Kanto Silog-Dashboard</title>
+
+	<link rel="stylesheet" href="../mdb/bootstrap.min.css">
+	<link rel="stylesheet" href="../mdb/mdb.min.css">
+	<link rel="stylesheet" href="../mdb/fontawesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../mdb/mystyle2.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link rel="stylesheet" href="../mdb/mystyle3.css">
+	<link rel="icon" href="../images/Logo.png">
+</head>
+<body class="hidden-sn grey-skin">
+
+<!--Update Stocks-->
+
+<!--Double navigation-->
+<header>
+	<!-- Sidebar navigation -->
+	<div id="slide-out" class="side-nav sn-bg-4">
+		<ul class="custom-scrollbar">
+			<li>
+				<div class="social">
+					<a href="#"><img src="../images/avatar.png" style="height:60px;width:60px"></a>
+					<a href="#"><p id="htmlFName" class="white-text" style="margin-top: -10px; font-size: 15px"></p></a>
+					<a href="#"><p id="htmlEmail" class="white-text" style="margin-top: -30px; font-size:15px"></p></a>
+				</div>
+			</li>
+			<!-- Logo -->
+			<ul class="collapsible collapsible-accordion">
+				<li><a href="index.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-home"></i> Home</a></li>
+				<li><a href="dashboard.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-columns"></i> Dashboard</a></li>
+				<li><a href="sales.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-chart-line"></i> Sales</a></li>
+				<li><a href="inventory.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-list"></i> Inventory</a></li>
+				<li><a href="Purchase.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-receipt"></i> Purchase</a></li>
+				<li><a href="orders.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-file-invoice-dollar"></i> Orders</a></li>
+				<li><a href="invlogs.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-clipboard-list"></i> Inventory Logs</a></li>
+				<li><a href="topseller.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-check-double"></i> Top Seller</a></li>
+				<li><a href="#" class="collapsible-header waves-effect" onclick="logOut()"><i class="fas fa-power-off"></i>
+				Logout</a></li>
+			</ul>
+
+			<!--/. Side navigation links -->
+		</ul>
+		<div class="sidenav-bg mask-strong"></div>
+	</div>
+	<!--/. Sidebar navigation -->
+	<!-- Navbar -->
+	<nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+		<!-- SideNav slide-out button -->
+		<div class="float-left">
+			<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+		</div>
+		<!-- Breadcrumb-->
+		<div class="breadcrumb-dn mr-auto">
+			<p>Kanto Silog </p>
+		</div>
+
+	</nav>
+
+</header>
+<center>
+	<h4 class="black-text" style="position: absolute; top: 10% !important;left: 20% !important; font-size: 40px !important;">ORDER LIST</h4>
+</center>
+<main>
+
+	<div class="col-12">
+		<div class="card">
+			<div class="row">
+				<div class="col-6">
+					<button class="btn btn-block orange" data-toggle="modal" data-target="#ModalNewOrder">New Order</button>
+				</div>
+				<div class="col-6">
+					<button class="btn btn-block blue" data-toggle="modal" data-target="#ModalViewOrder">View Order</button>
+				</div>
+			</div>
+			<div class="card-body">
+
+				<div class="table-responsive text-nowrap">
+
+					<table class="table text-center">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Price</th>
+								<th scope="col">Qty</th>
+								<th scope="col">Total</th>
+								<th scope="col">Action</th>
+
+							</tr>
+						</thead>
+						<tbody id="fetchOrders">
+							<tr>
+								<th scope="row">Ham Silog</th>
+								<td>40</td>
+								<td>2</td>
+								<td>80</td>
+								<td><button class="white"><i class="fas fa-plus green-text"></i></button><button class="white"><i class="fas fa-minus red-text"></i></button><button class="whie black-text">Void</button></td>
+							</tr>
+							<tr>
+								<th scope="row">Chicken ToSilog</th>
+								<td>40</td>
+								<td>2</td>
+								<td>80</td>
+								<td><button class="white"><i class="fas fa-plus green-text"></i></button><button class="white"><i class="fas fa-minus red-text"></i></button><button class="whie black-text">Void</button></td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="ModalNewOrder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<center><h5 class="modal-title" id="exampleModalLabel">Food List</h5></center>
+					<!-- Search form -->
+					<!-- <input class="form-control" type="text" placeholder="Search" aria-label="Search"> -->
+
+					<div class="table-responsive text-nowrap">
+
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Name</th>
+									<th scope="col">Price</th>
+									<th scope="col">Action</th>
+
+								</tr>
+							</thead>
+							<tbody id="foodlist">
+								<tr>
+									<th scope="row">Ham Silog</th>
+									<td>40</td>
+								
+									<td><button class="btn btn-block white"><i class="fas fa-plus green-text"></i></button></td>
+								</tr>
+								<tr>
+									<th scope="row">Chicken ToSilog</th>
+									<td>40</td>
+								
+									<td><button class="btn btn-block white"><i class="fas fa-plus green-text"></i></button></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="ModalViewOrder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header ">
+					
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="table-responsive text-nowrap">
+						<center><h3 class="modal-title" id="exampleModalLabel">Order</h3></center>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Name</th>
+									<th scope="col">Price</th>
+									<th scope="col">Qty</th>
+									<th scope="col">Total</th>
+									
+
+								</tr>
+							</thead>
+							<tbody id="viewOrder">
+								<tr>
+									<th scope="row">Ham Silog</th>
+									<td>40</td>
+									<td>2</td>
+									<td>80</td>
+									
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+
+				<h5 class="black-text" >Total:₱<span id="totalprice""></span>.00</h5>
+				<h5 class="black-text">Payment: <input type="number" id="payment" required=""></h5>
+				<h5 class="black-text">Change:₱ <span id="change"></span>.00</h5>
+
+				<div class="modal-footer justify-content-center">
+					<button type="submit" class="btn btn-primary" onclick="completeTransaction()">Complete Payment</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+</body>
+
+<script type="text/javascript" src="../mdb/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../mdb/popper.min.js"></script>
+<script type="text/javascript" src="../mdb/mdb.min.js"></script>
+<script type="text/javascript" src="../mdb/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/mdb.js"></script>
+<script type="text/javascript" src="../js/sweetalert.min.js"></script>
+<script type="text/javascript" src="../js/authentication.js"></script>
+<script type="text/javascript" src="../js/orderfood.js"></script>
+
+</html>

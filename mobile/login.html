@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Kanto Silog-Mobile</title>
+
+	<link rel="stylesheet" href="mdb/bootstrap.min.css">
+	<link rel="stylesheet" href="mdb/mdb.min.css">
+	<link rel="stylesheet" href="mdb/mystyle.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link href="images/logo.png" rel="icon">
+</head>
+<body class="hidden-sn grey-skin">
+	<main>
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col-s12">
+					<img src="images/Logo.png" class="img">
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-sm-12">
+					<div class="classic-tabs" >
+
+						<!-- Nav tabs -->
+						<ul class="nav tabs-cyan nav-justified" role="tablist" style="background-color: transparent!important;">
+							<li class="nav-item" >
+								<a class="nav-link waves-light active black-text" data-toggle="tab" href="#panel519" role="tab"><b>Sign In</b></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link waves-light black-text" data-toggle="tab" href="#panel549" role="tab"><b>Sign Up</b></a>
+							</li>
+						</ul>
+
+						<div class="tab-content">
+							<div class="tab-pane fade in show active" id="panel519" role="tabpanel">
+								<div class="row justify-content-center">
+									<div class="md-form">
+										<i class="far fa-user prefix grey-text"></i>
+										<input type="text" name="username1" id="username1" class="form-control black-text">
+										<label for="inputIconEx1" class="black-text">Username</label>
+									</div>
+								</div>
+								<div class="row justify-content-center">
+									<div class="md-form">
+										<i class="fas fa-lock prefix grey-text"></i>
+										<input type="password" name="password1" id="password1" class="form-control black-text">
+										<label for="inputIconEx1" class="black-text">Password</label>
+									</div>
+								</div>
+								<br>
+								<div class="row justify-content-center">
+									<div class="col-sm-6">
+										<button type="submit" id="signinUser" class="btn btn-danger btn-block btn-md">Sign In</button>
+									</div>
+								</div>
+								<div class="row justify-content-center">
+									<div class="col-sm-6">
+										<p class="text-center black-text"></p>
+									</div>
+								</div>
+
+							</div>
+							
+							
+							<div class="tab-pane fade" id="panel549" role="tabpanel">
+								<div class="row justify-content-center">
+									<div class="md-form">
+										<i class="far fa-user prefix grey-text"></i>
+										<input type="text" id="fullname" class="form-control black-text" >
+										<label for="inputIconEx1" class="black-text">Full Name</label>
+									</div>
+								</div>
+								<div class="row justify-content-center">
+									<div class="md-form">
+										<i class="far fa-user prefix grey-text"></i>
+										<input type="text" id="username" class="form-control black-text">
+										<label for="inputIconEx1" class="black-text">Username</label>
+									</div>
+								</div>
+								<div class="row justify-content-center">
+									<div class="md-form">
+										<i class="fas fa-envelope prefix grey-text"></i>
+										<input type="text" id="email" class="form-control black-text" >
+										<label for="inputIconEx1" class="black-text">Email Address</label>
+									</div>
+								</div>
+								<div class="row justify-content-center">
+									<div class="md-form">
+										<i class="fas fa-lock prefix grey-text"></i>
+										<input type="password" id="password" class="form-control black-text" min="6">
+										<label for="inputIconEx1" class="black-text">Password</label>
+									</div>
+								</div>
+								<br>
+								<div class="row justify-content-center">
+									<div class="col-sm-6">
+										<button type="button" class="btn btn-danger btn-block btn-md" onclick="register()">Sign Up</button>
+									</div>
+								</div>
+
+							</div>
+							
+							<!--/.Panel 4-->
+						</div>
+
+					</div>
+					<!-- Classic tabs -->
+				</div>
+			</div>
+		</main>
+
+		<!--Main Layout-->
+
+	</body>
+	
+	<script type="text/javascript" src="mdb/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="mdb/popper.min.js"></script>
+	<script type="text/javascript" src="mdb/mdb.min.js"></script>
+	<script type="text/javascript" src="mdb/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="js/function.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	</html>

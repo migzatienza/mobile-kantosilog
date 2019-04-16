@@ -1,0 +1,62 @@
+.black-gradient {
+	background:-webkit-linear-gradient(50deg,#a8a9ad,#38393f)!important;
+	background:-o-linear-gradient(50deg,#a8a9ad,#38393f)!important;
+	background:linear-gradient(40deg,#a8a9ad,#38393f)!important;
+}
+.btn.black-gradient {
+	-webkit-transition:.5s ease;
+	-o-transition:.5s ease;
+	transition:.5s ease;
+	color:#fff;
+}
+.btn.black-gradient:active,.btn.black-gradient:active:focus .btn.black-gradient.active,.btn.black-gradient:focus,.btn.black-gradient:hover {
+	background:-webkit-linear-gradient(50deg,#a8a9ad,#38393f);
+	background:-o-linear-gradient(50deg,#a8a9ad,#38393f);
+	background:linear-gradient(40deg,#a8a9ad,#38393f);
+}
+.black-gradient {
+	background:-o-linear-gradient(50deg,#a8a9ad,#38393f);
+	background:linear-gradient(40deg,#a8a9ad,#38393f);
+}
+
+.red-gradient {
+	background:-webkit-linear-gradient(50deg,#fc4545,#9f3030)!important;
+	background:-o-linear-gradient(50deg,#fc4545,#9f3030)!important;
+	background:linear-gradient(40deg,#fc4545,#9f3030)!important;
+}
+.btn.red-gradient {
+	-webkit-transition:.5s ease;
+	-o-transition:.5s ease;
+	transition:.5s ease;
+	color:#fff;
+}
+.btn.red-gradient:active,.btn.red-gradient:active:focus .btn.red-gradient.active,.btn.red-gradient:focus,.btn.red-gradient:hover {
+	background:-webkit-linear-gradient(50deg,#fc5e5e,#b23535);
+	background:-o-linear-gradient(50deg,#fc5e5e,#b23535);
+	background:linear-gradient(40deg,#fc5e5e,#b23535);
+}
+.red-gradient {
+	background:-o-linear-gradient(50deg,#fc4545,#f44141);
+	background:linear-gradient(40deg,#fc4545,#f44141);
+}
+
+.blue-gradient {
+	background:-webkit-linear-gradient(50deg,#45cafc,#303f9f)!important;
+	background:-o-linear-gradient(50deg,#45cafc,#303f9f)!important;
+	background:linear-gradient(40deg,#45cafc,#303f9f)!important;
+}
+.btn.blue-gradient {
+	-webkit-transition:.5s ease;
+	-o-transition:.5s ease;
+	transition:.5s ease;
+	color:#fff;
+}
+.btn.blue-gradient:active,.btn.blue-gradient:active:focus .btn.blue-gradient.active,.btn.blue-gradient:focus,.btn.blue-gradient:hover {
+	background:-webkit-linear-gradient(50deg,#5ed1fc,#3647b3);
+	background:-o-linear-gradient(50deg,#5ed1fc,#3647b3);
+	background:linear-gradient(40deg,#5ed1fc,#3647b3);
+}
+.blue-gradient {
+	background:-o-linear-gradient(50deg,#45cafc,#4285f4);
+	background:linear-gradient(40deg,#45cafc,#4285f4);
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Kanto Silog-Dashboard</title>
+
+	<link rel="stylesheet" href="../mdb/bootstrap.min.css">
+	<link rel="stylesheet" href="../mdb/mdb.min.css">
+	<link rel="stylesheet" href="../mdb/fontawesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../mdb/mystyle2.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link rel="stylesheet" href="../mdb/mystyle3.css">
+	<link rel="icon" href="../images/Logo.png">
+</head>
+<body class="hidden-sn grey-skin">
+	<div class="modal fade" id="newfoodlist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header text-center">
+				<h4 class="modal-title w-100 font-weight-bold">Food Information</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body mx-3">
+				<div class="md-form mb-4">
+					<i class="fa fa-user prefix grey-text"></i>
+					<input type="text" id="foodname" class="form-control validate">
+					<label for="form3">Food Name</label>
+				</div>
+
+				<div class="md-form mb-4">
+					<i class="fa fa-shopping-basket prefix grey-text"></i>
+					<input type="email" id="foodstocks" class="form-control validate">
+					<label for="form3">Food Stocks</label>
+				</div>
+
+				<div class="md-form mb-4">
+					<i class="fas fa-dollar-sign prefix grey-text"></i>
+					<input type="email" id="foodprice" class="form-control validate">
+					<label for="form3">Food Price</label>
+				</div>
+
+				<div class="md-form mb-4">
+					<i class="fa fa-archive prefix grey-text"></i>
+					<input type="email" id="foodcateg" value="Food" class="form-control validate" disabled="">
+					<label for="form3">Food Category</label>
+				</div>
+			</div>
+			<div class="modal-footer d-flex justify-content-center">
+				<button type="submit" class="btn btn-primary" onclick="addtoList()">Submit <i class="fa fa-paper-plane-o ml-1"></i></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Update Stocks-->
+
+<!--Double navigation-->
+<header>
+	<!-- Sidebar navigation -->
+	<div id="slide-out" class="side-nav sn-bg-4">
+		<ul class="custom-scrollbar">
+			<!-- Logo -->
+			<li>
+				<div class="social">
+					<a href="#"><img src="../images/avatar.png" style="height:60px;width:60px"></a>
+					<a href="#"><p id="htmlFName" class="white-text" style="margin-top: -10px; font-size: 15px"></p></a>
+					<a href="#"><p id="htmlEmail" class="white-text" style="margin-top: -30px; font-size:15px"></p></a>
+				</div>
+			</li>
+			<li>
+				<ul class="collapsible collapsible-accordion">
+					<li><a href="index.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-home"></i> Home</a></li>
+					<li><a href="dashboard.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-columns"></i> Dashboard</a></li>
+					<li><a href="sales.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-chart-line"></i> Sales</a></li>
+					<li><a href="inventory.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-list"></i> Inventory</a></li>
+					<li><a href="Purchase.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-receipt"></i> Purchase</a></li>
+					<li><a href="orders.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-file-invoice-dollar"></i> Orders</a></li>
+					<li><a href="invlogs.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-clipboard-list"></i> Inventory Logs</a></li>
+					<li><a href="topseller.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-check-double"></i> Settings</a></li>
+					<li><a href="#" class="collapsible-header waves-effect" onclick="logOut()"><i class="fas fa-power-off"></i>
+					Logout</a></li>
+				</ul>
+
+			</li>
+
+			<!--/. Side navigation links -->
+		</ul>
+		<div class="sidenav-bg mask-strong"></div>
+	</div>
+	<!--/. Sidebar navigation -->
+	<!-- Navbar -->
+	<nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+		<!-- SideNav slide-out button -->
+		<div class="float-left">
+			<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+		</div>
+		<!-- Breadcrumb-->
+		<div class="breadcrumb-dn mr-auto">
+			<p>Kanto Silog </p>
+		</div>
+
+	</nav>
+	<!-- /.Navbar -->
+</header>
+<!--/.Double navigation-->
+
+<!--Main Layout-->
+<main>
+	<div class="container-fluid">
+		<!-- <div class="row">
+			
+			<center><img src="../images/Logo.png" style="width: 50%; margin-top: -130px"></center>	
+
+			
+		</div> -->
+		<br><br>
+		<div class="row">
+
+			<div class="col-6 col-sm-6">
+				<div class="card green z-depth-2">
+					<div class="card-content">
+						<a href="dashboard.html">
+							<center><h1><i class="fas fa-columns" id="icons"></i></i></h1>
+								<p class="colorNgFont"><b>Dashboard</b></p>
+							</center>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-6 col-sm-6">
+				<div class="card blue z-depth-2">
+					<div class="card-content">
+						<a href="sales.html">
+							<center><h1><i class="fas fa-chart-line" id="icons"></i></h1>
+								<p class="colorNgFont"><b>Sales</b></p>
+							</center>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="row2">
+			<div class="col-6 col-sm-6">
+				<div class="card orange z-depth-2">
+					<div class="card-content">
+						<a href="purchase.html">
+							<center><h1><i class="fas fa-receipt" id="icons"></i></h1>
+								<p class="colorNgFont"><b>Purchase</b></p>
+							</center>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6 col-sm-6">
+				<div class="card brown z-depth-2">
+					<div class="card-content">
+						<a href="inventory.html">
+							<center><h1><i class="fas fa-list" id="icons"></i></h1>
+								<p class="colorNgFont"><b>Inventory</b></p>
+							</center>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" id="row2">
+
+			<div class="col-6 col-sm-6">
+				<div class="card purple z-depth-2">
+					<div class="card-content">
+						<a href="orders.html"">
+							<center><h1><i class="fas fa-file-invoice-dollar" id="icons"></i></h1>
+								<p class="colorNgFont"><b>Orders</b></p>
+							</center>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-6 col-sm-6">
+				<div class="card pink z-depth-2">
+					<div class="card-content">
+						<a href="invlogs.html">
+							<center><h1><i class="fas fa-clipboard-list" id="icons"></i></h1>
+								<p class="colorNgFont"><b>Inventory Logs</b></p>
+							</center>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="row2">
+			<div class="col-6 col-sm-6">
+				<div class="card teal z-depth-2">
+					<div class="card-content">
+						<a href="#" data-toggle="modal" data-target="#combo">
+							<center><h1><i class="fas fa-utensils" id="icons"></i></h1>
+								<p class="colorNgFont"><b>Add Combo</b></p>
+							</center>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-6 col-sm-6">
+				<div class="card indigo z-depth-2">
+					<div class="card-content">
+						<a href="topseller.html">
+							<center><h1><i class="fas fa-user-cog" id="icons"></i></h1>
+								<p class="colorNgFont"><b>Settings</b></p>
+							</center>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="modal fade" id="combo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h4 class="modal-title w-100 font-weight-bold">Order</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body mx-3">
+					<div class="md-form mb-5">
+						<i class="fas fa-utensil-spoon prefix grey-text"></i>
+						<input type="text" id="food_name" class="form-control">
+						<label>Combo Name</label>
+					</div>
+					<div class="md-form mb-5">
+						<i class="fas fa-utensil-spoon prefix grey-text"></i>
+						<div class="md-form">
+							<select class="browser-default custom-select" id="food_ing1">
+								<option selected>First Ingredient</option>
+							</select>
+						</div>
+						
+					</div>
+					<div class="md-form mb-5">
+						<i class="fas fa-utensil-spoon prefix grey-text"></i>
+						<div class="md-form">
+							<select class="browser-default custom-select" id="food_ing2">
+								<option selected>Second Ingredient</option>
+							</select>
+						</div>
+						
+					</div>
+					<div class="md-form mb-5">
+						<i class="fas fa-utensil-spoon prefix grey-text"></i>
+						<div class="md-form">
+							<select class="browser-default custom-select" id="food_ing3">
+								<option selected>Third Ingredient</option>
+							</select>
+						</div>
+						
+					</div>
+
+					<div class="md-form mb-5">
+						<i class="fas fa-dollar-sign prefix grey-text"></i>
+						<input type="text" id="food_price" class="form-control">
+						<label>Price</label>
+					</div>
+				</div>
+				<div class="modal-footer d-flex justify-content-center">
+					<button class="btn btn-default" onclick="newCombo()">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<!--Main Layout-->
+
+</body>
+
+<script type="text/javascript" src="../mdb/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../mdb/popper.min.js"></script>
+<script type="text/javascript" src="../mdb/mdb.min.js"></script>
+<script type="text/javascript" src="../mdb/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/mdb.js"></script>
+<script type="text/javascript" src="../js/sweetalert.min.js"></script>
+<script type="text/javascript" src="../js/authentication.js"></script>
+<script type="text/javascript" src="../js/addCombo.js"></script>
+</html>

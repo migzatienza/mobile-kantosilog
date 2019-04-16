@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Kanto Silog-Dashboard</title>
+
+	<link rel="stylesheet" href="../mdb/bootstrap.min.css">
+	<link rel="stylesheet" href="../mdb/mdb.min.css">
+	<link rel="stylesheet" href="../mdb/fontawesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../mdb/mystyle2.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link rel="stylesheet" href="../mdb/mystyle3.css">
+	<link rel="icon" href="../images/Logo.png">
+</head>
+<body class="hidden-sn grey-skin">
+	
+
+	<!--Update Stocks-->
+
+	<!--Double navigation-->
+	<header>
+		<!-- Sidebar navigation -->
+		<div id="slide-out" class="side-nav sn-bg-4">
+			<ul class="custom-scrollbar">
+				<!-- Logo -->
+				<li>
+					<div class="social">
+						<a href="#"><img src="../images/avatar.png" style="height:60px;width:60px"></a>
+						<a href="#"><p id="htmlFName" class="white-text" style="margin-top: -10px; font-size: 15px"></p></a>
+						<a href="#"><p id="htmlEmail" class="white-text" style="margin-top: -30px; font-size:15px"></p></a>
+					</div>
+				</li>
+	
+			<li>
+				<ul class="collapsible collapsible-accordion">
+					<li><a href="index.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-home"></i> Home</a></li>
+					<li><a href="dashboard.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-columns"></i> Dashboard</a></li>
+					<li><a href="sales.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-chart-line"></i> Sales</a></li>
+					<li><a href="inventory.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-list"></i> Inventory</a></li>
+					<li><a href="Purchase.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-receipt"></i> Purchase</a></li>
+					<li><a href="orders.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-file-invoice-dollar"></i> Orders</a></li>
+					<li><a href="invlogs.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-clipboard-list"></i> Inventory Logs</a></li>
+					<li><a href="topseller.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-check-double"></i> Top Seller</a></li>
+					<li><a href="#" class="collapsible-header waves-effect" onclick="logOut()"><i class="fas fa-power-off"></i>
+					Logout</a></li>
+				</ul>
+
+			</li>
+
+			<!--/. Side navigation links -->
+		</ul>
+		<div class="sidenav-bg mask-strong"></div>
+	</div>
+	<!--/. Sidebar navigation -->
+	<!-- Navbar -->
+	<nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+		<!-- SideNav slide-out button -->
+		<div class="float-left">
+			<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+		</div>
+		<!-- Breadcrumb-->
+		<div class="breadcrumb-dn mr-auto">
+			<p>Kanto Silog </p>
+		</div>
+
+	</nav>
+	<!-- /.Navbar -->
+</header>
+<!--/.Double navigation-->
+
+<!--Main Layout-->
+<main class="mt-5 pt-2">
+	<div class="container">
+		<h3><b>VIEW ORDERS</b></h3>
+		<div class="row">
+			<div class="col-12">
+
+
+				<div class="card CardInv">
+
+					<div class="table-responsive text-nowrap">
+
+						<table class="table">
+							<div class="row col-12">
+								
+							</div>
+							<thead class="text-center">
+								<tr>
+									<th scope="col">Action</th>
+									<th scope="col">Order ID</th>
+									<th scope="col">Staff</th>
+									<th scope="col">Total</th>
+									<th scope="col">Payment</th>
+									<th scope="col">Change</th>
+									<th scope="col">Date</th>
+								</tr>
+							</thead>
+							<tbody id="viewLogs" class="text-center">
+								<tr>
+									<th scope="row">1</th>
+									<td>Cell</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+	<!--VIEW ORDER MODAL-->
+	<div class="modal fade" id="ModalViewOrder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header ">
+					
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="table-responsive text-nowrap">
+						<center><h3 class="modal-title" id="exampleModalLabel">Order List</h3></center>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Name</th>
+									<th scope="col">Price</th>
+									<th scope="col">Qty</th>
+									<th scope="col">Total</th>
+									
+
+								</tr>
+							</thead>
+							<tbody id="viewOrders">
+								<tr>
+									<th scope="row">Ham Silog</th>
+									<td>40</td>
+									<td>2</td>
+									<td>80</td>
+									
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+<!-- 
+				<h5 class="grey-text">Payment:₱<span id="money"></span>.00</h5>
+				<h5 class="grey-text" >Total:₱<span id="totalprice""></span>.00</h5>
+				<h5 class="grey-text">Change:₱ <span id="change"></span>.00</h5> -->
+			</div>
+		</div>
+	</div>
+</main>
+<!--Main Layout-->
+
+</body>
+
+<script type="text/javascript" src="../mdb/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../mdb/popper.min.js"></script>
+<script type="text/javascript" src="../mdb/mdb.min.js"></script>
+<script type="text/javascript" src="../mdb/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/mdb.js"></script>
+<script type="text/javascript" src="../js/sweetalert.min.js"></script>
+<script type="text/javascript" src="../js/authentication.js"></script>
+<script type="text/javascript" src="../js/vieworder.js"></script>
+
+</html>

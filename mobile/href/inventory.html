@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Kanto Silog-Dashboard</title>
+
+	<link rel="stylesheet" href="../mdb/bootstrap.min.css">
+	<link rel="stylesheet" href="../mdb/mdb.min.css">
+	<link rel="stylesheet" href="../mdb/fontawesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../mdb/mystyle2.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link rel="stylesheet" href="../mdb/mystyle3.css">
+	<link rel="icon" href="../images/Logo.png">
+</head>
+<body class="hidden-sn grey-skin">
+	<div class="modal fade" id="addFood" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header text-center">
+				<h4 class="modal-title w-100 font-weight-bold">Food Information</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body mx-3">
+				<div class="md-form mb-4">
+					<i class="fa fa-user prefix grey-text"></i>
+					<input type="text" id="addfoodname" class="form-control validate" disabled>
+					<label for="form3">Food Name</label>
+				</div>
+				<div class="md-form mb-4">
+					<i class="fa fa-shopping-basket prefix grey-text"></i>
+					<input type="number" id="addfoodstocks" class="form-control validate" required>
+					<label for="form3">Food Stocks</label>
+				</div>
+			</div>
+			<div class="modal-footer d-flex justify-content-center">
+				<button type="submit" class="btn btn-primary" onclick="addtoInventory()">Submit <i class="fa fa-paper-plane-o ml-1"></i></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Update Stocks-->
+<div class="modal fade" id="addStocks" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header text-center">
+			<h4 class="modal-title w-100 font-weight-bold">Add Stocks</h4>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		
+		<div class="col-auto">
+			<div class="input-group mb-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text"><i class="fa fa-user prefix grey-text"></i></div>
+				</div>
+				<input type="text" class="form-control py-0" id="addfoodname1" disabled>
+			</div>
+		</div>
+		<div class="col-auto">
+			<div class="input-group mb-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text"><i class="fa fa-shopping-basket prefix grey-text"></i></div>
+				</div>
+				<input type="number" class="form-control py-0" id="addfoodstocks1" placeholder="Quantity">
+			</div>
+		</div>
+		<div class="modal-footer d-flex justify-content-center">
+			<button type="submit" class="btn btn-primary" onclick="submitStocks()">Submit <i class="fa fa-paper-plane-o ml-1"></i></button>
+		</div>
+
+	</div>
+</div>
+</div>
+<!--Double navigation-->
+<header>
+	<!-- Sidebar navigation -->
+	<div id="slide-out" class="side-nav sn-bg-4">
+		<ul class="custom-scrollbar">
+			<!-- Logo -->
+			<li>
+				<div class="social">
+					<a href="#"><img src="../images/avatar.png" style="height:60px;width:60px"></a>
+					<a href="#"><p id="htmlFName" class="white-text" style="margin-top: -10px; font-size: 15px"></p></a>
+					<a href="#"><p id="htmlEmail" class="white-text" style="margin-top: -30px; font-size:15px"></p></a>
+				</div>
+			</li>
+			<!--/. Logo -->
+			<!--Social-->
+
+			<!--/Social-->
+			<!--Search Form-->
+			<!-- <li>
+				<form class="search-form" role="search">
+					<div class="form-group md-form mt-0 pt-1 waves-light">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+				</form>
+			</li> -->
+			<!--/.Search Form-->
+			<!-- Side navigation links -->
+			<li>
+				<ul class="collapsible collapsible-accordion">
+					<li><a href="index.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-home"></i> Home</a></li>
+					<li><a href="dashboard.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-columns"></i> Dashboard</a></li>
+					<li><a href="sales.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-chart-line"></i> Sales</a></li>
+					<li><a href="inventory.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-list"></i> Inventory</a></li>
+					<li><a href="Purchase.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-receipt"></i> Purchase</a></li>
+					<li><a href="orders.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-file-invoice-dollar"></i> Orders</a></li>
+					<li><a href="invlogs.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-clipboard-list"></i> Inventory Logs</a></li>
+					<li><a href="topseller.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-check-double"></i> Top Seller</a></li>
+					<li><a href="#" class="collapsible-header waves-effect" onclick="logOut()"><i class="fas fa-power-off"></i>
+					Logout</a></li>
+				</ul>
+
+
+			</li>
+
+			<!--/. Side navigation links -->
+		</ul>
+		<div class="sidenav-bg mask-strong"></div>
+	</div>
+	<!--/. Sidebar navigation -->
+	<!-- Navbar -->
+	<nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+		<!-- SideNav slide-out button -->
+		<div class="float-left">
+			<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+		</div>
+		<!-- Breadcrumb-->
+		<div class="breadcrumb-dn mr-auto">
+			<p>Kanto Silog </p>
+		</div>
+
+	</nav>
+
+</header>
+
+<main>
+	
+	<div class="card ml-2 mr-2" style="margin-top: -50px; height: 80vh;">
+		<div class="card-header">
+			<h4 class="card-title text-center white-text"><b>Inventory</b></h4>
+		</div>
+		<div class="card-content">
+			<div class="card CardInv">
+
+				<div class="table-responsive text-nowrap" style="height: 100vh !important;">
+
+					<table class="table">
+
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Stocks</th>
+							</tr>
+						</thead>
+						<tbody id="fetchInv">
+							<tr>
+								<th scope="row">1</th>
+								<td>Cell</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+</main>
+
+
+</body>
+
+<script type="text/javascript" src="../mdb/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../mdb/popper.min.js"></script>
+<script type="text/javascript" src="../mdb/mdb.min.js"></script>
+<script type="text/javascript" src="../mdb/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/mdb.js"></script>
+<script type="text/javascript" src="../js/sweetalert.min.js"></script>
+<script type="text/javascript" src="../js/authentication.js"></script>
+<script type="text/javascript" src="../js/addfood.js"></script>
+<script type="text/javascript" src="../js/submitStocks.js"></script>
+</html>

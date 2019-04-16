@@ -1,0 +1,54 @@
+.grey-skin .side-nav .sidenav-bg.mask-strong:after, .grey-skin .side-nav .sidenav-bg:after {
+    background: #1b3456;
+}
+.Title{
+text-align: center;
+vertical-align: middle;
+position: absolute;
+top: 10% !important;
+left: 20% !important;
+font-family: comic sans ms;
+font-size: 40px !important;
+}
+.TableHead{
+	text-align: center;
+	vertical-align: middle;
+	font-size: 30px !important;
+}
+
+.img.text-center{
+	height: 150px!important;
+	width:150px!important;
+}
+.container-fluid{
+	margin-top: -90px!important;
+}
+.grey-skin .navbar {
+    background-color: #1b3456;
+}
+.navbar .dropdown-menu {
+
+    margin-left: -80px;
+}
+
+b, strong {
+    font-weight: normal;
+}
+
+.CardInv{
+	height: 50vh !important;
+}
+.side-nav .collapsible a {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 56px;
+    margin-top: 15px;
+}
+
+.side-nav .social a {
+    margin-top: 15px;
+}
+
+select.browser-default {
+    margin-left: 25px;
+}
