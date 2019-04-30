@@ -22,9 +22,7 @@ function viewStocks(){
 				body+='<td class="red-text"><b>'+e.food_status+'</b></td>';
 				body+='</tr>';
 			}
-
 		});
-		
 		document.getElementById('stocklist').innerHTML = body;
 	});
 }

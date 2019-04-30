@@ -52,3 +52,15 @@ b, strong {
 select.browser-default {
     margin-left: 25px;
 }
+
+.menu-icon {
+    margin: 10px 0 10px 0;
+}
+
+.menu-icon > div {
+     width: 26px;
+     height:2px;
+     background-color:white;
+     margin: 6px 0;
+     border-radius: 10px
+}

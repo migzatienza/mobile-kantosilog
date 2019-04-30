@@ -9,12 +9,12 @@ function invLogs(){
 			var body="";
 			data.map(e=>{
 				body+="<tr>";
-				body+="<td>"+e.fld_name+"</td>";
-				body+="<td>"+e.fld_oldstocks+"</td>";
-				body+="<td>"+e.fld_additional+"</td>";
-				body+="<td>"+e.fld_totalstocks+"</td>";
-				body+="<td>"+e.fld_dateadded+"</td>";
-				body+="<td>"+e.fld_staff+"</td>";
+				body+="<td><b>"+e.fld_name+"</b></td>";
+				body+="<td><b>"+e.fld_oldstocks+"</b></td>";
+				body+="<td><b>"+e.fld_additional+"</b></td>";
+				body+="<td><b>"+e.fld_totalstocks+"</b></td>";
+				body+="<td><b>"+e.fld_dateadded+"</b></td>";
+				body+="<td><b>"+e.fld_staff+"</b></td>";
 				body+="</tr>";
 			});
 			$('#viewLogs').html(body);

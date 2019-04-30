@@ -20,6 +20,7 @@ $(document).ready(function(){
 					$('#password1').val('');
 
 				}else{
+					var loading = '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>';
 					if(account.user_remarks == 'Activated'){
 						localStorage.setItem("user_data", JSON.stringify(account));
 						window.location.assign("./href/index.html");
@@ -41,6 +42,7 @@ $(document).ready(function(){
 							icon: "warning",
 						});
 					}
+					$('#loading').html(loading);
 				}
 			}
 		});

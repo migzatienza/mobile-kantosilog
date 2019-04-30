@@ -33,6 +33,7 @@ function addtoStocks(id){
 		url:url+"php/codes.php?viewtoStocks&id="+id,
 		method:"GET",
 		dataType:"JSON",
+		data:{id:id},
 		success:function(data){
 			data.map(e=>{
 				var namea = e.fld_name;

@@ -15,59 +15,30 @@
 </head>
 <body class="hidden-sn grey-skin">
 
-<!--Update Stocks-->
-
 <!--Double navigation-->
 <header>
-	<!-- Sidebar navigation -->
-	<div id="slide-out" class="side-nav sn-bg-4">
-		<ul class="custom-scrollbar">
-			<li>
-				<div class="social">
-					<a href="#"><img src="../images/avatar.png" style="height:60px;width:60px"></a>
-					<a href="#"><p id="htmlFName" class="white-text" style="margin-top: -10px; font-size: 15px"></p></a>
-					<a href="#"><p id="htmlEmail" class="white-text" style="margin-top: -30px; font-size:15px"></p></a>
-				</div>
-			</li>
-			<!-- Logo -->
-			<ul class="collapsible collapsible-accordion">
-				<li><a href="index.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-home"></i> Home</a></li>
-				<li><a href="dashboard.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-columns"></i> Dashboard</a></li>
-				<li><a href="sales.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-chart-line"></i> Sales</a></li>
-				<li><a href="inventory.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-list"></i> Inventory</a></li>
-				<li><a href="Purchase.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-receipt"></i> Purchase</a></li>
-				<li><a href="orders.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-file-invoice-dollar"></i> Orders</a></li>
-				<li><a href="invlogs.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-clipboard-list"></i> Inventory Logs</a></li>
-				<li><a href="topseller.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-check-double"></i> Top Seller</a></li>
-				<li><a href="#" class="collapsible-header waves-effect" onclick="logOut()"><i class="fas fa-power-off"></i>
-				Logout</a></li>
-			</ul>
-
-			<!--/. Side navigation links -->
-		</ul>
-		<div class="sidenav-bg mask-strong"></div>
-	</div>
-	<!--/. Sidebar navigation -->
-	<!-- Navbar -->
-	<nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
-		<!-- SideNav slide-out button -->
-		<div class="float-left">
-			<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
-		</div>
-		<!-- Breadcrumb-->
-		<div class="breadcrumb-dn mr-auto">
-			<p>Kanto Silog </p>
-		</div>
-
-	</nav>
-
+	
 </header>
-<center>
-	<h4 class="black-text" style="position: absolute; top: 10% !important;left: 20% !important; font-size: 40px !important;">ORDER LIST</h4>
-</center>
+		<!-- nav start -->
+		<br>
+			<ul class="nav nav-tabs nav-justified md-tabs" id="myTabJust" role="tablist" style="background-color:#314755">
+			<li class="nav-item">
+				<a class="nav-link active" id="home-tab-just" data-toggle="" href="index.html" role="tab" aria-controls="home-just"
+				aria-selected="true">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="profile-tab-just" data-toggle="tab" href="#profile-just" role="tab" aria-controls="profile-just"
+				aria-selected="false">My Account</a>
+			</li>
+			</ul>
+		
+		<!-- nav end -->
 <main>
 
-	<div class="col-12">
+	<div class="col-12" style="margin-top: -45px">
+		<div class="container">
+			<h2><b>Purchase<b></h2>
+		</div>
 		<div class="card">
 			<div class="row">
 				<div class="col-6">
@@ -93,20 +64,7 @@
 							</tr>
 						</thead>
 						<tbody id="fetchOrders">
-							<tr>
-								<th scope="row">Ham Silog</th>
-								<td>40</td>
-								<td>2</td>
-								<td>80</td>
-								<td><button class="white"><i class="fas fa-plus green-text"></i></button><button class="white"><i class="fas fa-minus red-text"></i></button><button class="whie black-text">Void</button></td>
-							</tr>
-							<tr>
-								<th scope="row">Chicken ToSilog</th>
-								<td>40</td>
-								<td>2</td>
-								<td>80</td>
-								<td><button class="white"><i class="fas fa-plus green-text"></i></button><button class="white"><i class="fas fa-minus red-text"></i></button><button class="whie black-text">Void</button></td>
-							</tr>
+							
 						</tbody>
 					</table>
 

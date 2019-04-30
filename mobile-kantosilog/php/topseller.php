@@ -2,7 +2,7 @@
 require_once("connect.php");
 $list = array();
 if(isset($_GET['asd'])){
-	$sql = mysqli_query($db, "SELECT *, SUM(fld_qty) as topseller FROM tbl_orders GROUP BY fld_menu ORDER BY topseller DESC LIMIT 3");
+	$sql = mysqli_query($db, "SELECT *, sum(fld_qty) as qty from tbl_orders GROUP BY DATE_FORMAT(fld_date, '%M %d, %Y') order by qty desc");
 }
 
 while($rows = mysqli_fetch_assoc($sql)){

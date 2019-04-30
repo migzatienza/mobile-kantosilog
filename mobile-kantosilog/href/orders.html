@@ -1,162 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 	<title>Kanto Silog-Dashboard</title>
 
 	<link rel="stylesheet" href="../mdb/bootstrap.min.css">
 	<link rel="stylesheet" href="../mdb/mdb.min.css">
 	<link rel="stylesheet" href="../mdb/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../mdb/mystyle2.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+	crossorigin="anonymous">
 	<link rel="stylesheet" href="../mdb/mystyle3.css">
 	<link rel="icon" href="../images/Logo.png">
 </head>
+
 <body class="hidden-sn grey-skin">
-	
+
 
 	<!--Update Stocks-->
 
 	<!--Double navigation-->
 	<header>
-		<!-- Sidebar navigation -->
-		<div id="slide-out" class="side-nav sn-bg-4">
-			<ul class="custom-scrollbar">
-				<!-- Logo -->
-				<li>
-					<div class="social">
-						<a href="#"><img src="../images/avatar.png" style="height:60px;width:60px"></a>
-						<a href="#"><p id="htmlFName" class="white-text" style="margin-top: -10px; font-size: 15px"></p></a>
-						<a href="#"><p id="htmlEmail" class="white-text" style="margin-top: -30px; font-size:15px"></p></a>
+
+	</header>
+	<!--/.Double navigation-->
+	<!-- nav start -->
+	<br>
+	<ul class="nav nav-tabs nav-justified md-tabs" id="myTabJust" role="tablist" style="background-color:#314755">
+		<li class="nav-item">
+			<a class="nav-link active" id="home-tab-just" data-toggle="" href="index.html" role="tab" aria-controls="home-just" aria-selected="true">Home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" id="profile-tab-just" data-toggle="tab" href="#profile-just" role="tab" aria-controls="profile-just"
+			aria-selected="false">My Account</a>
+		</li>
+	</ul>
+	<br>
+	<!-- nav end -->
+	<!--Main Layout-->
+	<main>
+
+		<div class="col-12" style="margin-top: -65px">
+			<div class="container">
+				<h2>
+					<b>View Orders
+						<b>
+						</h2>
 					</div>
-				</li>
-	
-			<li>
-				<ul class="collapsible collapsible-accordion">
-					<li><a href="index.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-home"></i> Home</a></li>
-					<li><a href="dashboard.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-columns"></i> Dashboard</a></li>
-					<li><a href="sales.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-chart-line"></i> Sales</a></li>
-					<li><a href="inventory.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-list"></i> Inventory</a></li>
-					<li><a href="Purchase.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-receipt"></i> Purchase</a></li>
-					<li><a href="orders.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-file-invoice-dollar"></i> Orders</a></li>
-					<li><a href="invlogs.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-clipboard-list"></i> Inventory Logs</a></li>
-					<li><a href="topseller.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-check-double"></i> Top Seller</a></li>
-					<li><a href="#" class="collapsible-header waves-effect" onclick="logOut()"><i class="fas fa-power-off"></i>
-					Logout</a></li>
-				</ul>
+					<br>
 
-			</li>
+					<!-- Ito yung notification-->
 
-			<!--/. Side navigation links -->
-		</ul>
-		<div class="sidenav-bg mask-strong"></div>
-	</div>
-	<!--/. Sidebar navigation -->
-	<!-- Navbar -->
-	<nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
-		<!-- SideNav slide-out button -->
-		<div class="float-left">
-			<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
-		</div>
-		<!-- Breadcrumb-->
-		<div class="breadcrumb-dn mr-auto">
-			<p>Kanto Silog </p>
-		</div>
+					<div id="viewLogss" role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false" style="background-color: white; border-color: violet">
+						<div class="toast-header">
+							<svg class=" rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+							focusable="false" role="img">
+							<rect fill="#007aff" width="100%" height="100%" />
+						</svg>
+						<strong class="mr-auto">Latest Order</strong>
+						<small>12/12/12</small>
+						<small style="margin-left: 55px">$2000</small>
+						<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" data-toggle="modal" data-target="#basicExampleModal">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="toast-body">
+						Order No. 09000-000-111
+						<small style="margin-left: 53px">6 orders</small>
+					</div>
+				</div>
+				<br>
 
-	</nav>
-	<!-- /.Navbar -->
-</header>
-<!--/.Double navigation-->
-
-<!--Main Layout-->
-<main class="mt-5 pt-2">
-	<div class="container">
-		<h3><b>VIEW ORDERS</b></h3>
-		<div class="row">
-			<div class="col-12">
-
-
-				<div class="card CardInv">
-
-					<div class="table-responsive text-nowrap">
-
-						<table class="table">
-							<div class="row col-12">
-								
+				<!-- Modal -->
+				<div class="modal fade" id="ModalViewOrder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" style="font-size: 25px"><b>Order List</b></h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
 							</div>
-							<thead class="text-center">
-								<tr>
-									<th scope="col">Action</th>
-									<th scope="col">Order ID</th>
-									<th scope="col">Staff</th>
-									<th scope="col">Total</th>
-									<th scope="col">Payment</th>
-									<th scope="col">Change</th>
-									<th scope="col">Date</th>
-								</tr>
-							</thead>
-							<tbody id="viewLogs" class="text-center">
-								<tr>
-									<th scope="row">1</th>
-									<td>Cell</td>
-								</tr>
-							</tbody>
-						</table>
+							<div class="modal-body">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th scope="col" >Name</th>
+											<th scope="col">Price</th>
+											<th scope="col">Qty</th>
+											<th scope="col">Total</th>
+										</tr>
+									</thead>
+									<tbody id="viewOrders">
+									</tbody>
+								</table>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+							</div>
+						</div>
 					</div>
-
 				</div>
-
-
 			</div>
 		</div>
 	</div>
 
 
-	<!--VIEW ORDER MODAL-->
-	<div class="modal fade" id="ModalViewOrder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header ">
-					
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class="table-responsive text-nowrap">
-						<center><h3 class="modal-title" id="exampleModalLabel">Order List</h3></center>
-						<table class="table">
-							<thead>
-								<tr>
-									<th scope="col">Name</th>
-									<th scope="col">Price</th>
-									<th scope="col">Qty</th>
-									<th scope="col">Total</th>
-									
-
-								</tr>
-							</thead>
-							<tbody id="viewOrders">
-								<tr>
-									<th scope="row">Ham Silog</th>
-									<td>40</td>
-									<td>2</td>
-									<td>80</td>
-									
-								</tr>
-							</tbody>
-						</table>
-
-					</div>
-				</div>
-<!-- 
-				<h5 class="grey-text">Payment:₱<span id="money"></span>.00</h5>
-				<h5 class="grey-text" >Total:₱<span id="totalprice""></span>.00</h5>
-				<h5 class="grey-text">Change:₱ <span id="change"></span>.00</h5> -->
-			</div>
-		</div>
-	</div>
 </main>
 <!--Main Layout-->
 
@@ -169,6 +120,7 @@
 <script type="text/javascript" src="../js/mdb.js"></script>
 <script type="text/javascript" src="../js/sweetalert.min.js"></script>
 <script type="text/javascript" src="../js/authentication.js"></script>
+<script type="text/javascript" src="../js/init.js"></script>
 <script type="text/javascript" src="../js/vieworder.js"></script>
 
 </html>

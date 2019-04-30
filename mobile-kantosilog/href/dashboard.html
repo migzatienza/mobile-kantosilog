@@ -20,80 +20,39 @@
 
 	<!--Double navigation-->
 	<header>
-		<!-- Sidebar navigation -->
-		<div id="slide-out" class="side-nav sn-bg-4">
-			<ul class="custom-scrollbar">
-				<!-- Logo -->
-				<li>
-					<div class="social">
-						<a href="#"><img src="../images/avatar.png" style="height:60px;width:60px"></a>
-						<a href="#"><p id="htmlFName" class="white-text" style="margin-top: -10px; font-size: 15px"></p></a>
-						<a href="#"><p id="htmlEmail" class="white-text" style="margin-top: -30px; font-size:15px"></p></a>
-					</div>
-				</li>
-
-				<li>
-					<ul class="collapsible collapsible-accordion">
-						<li><a href="index.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-home"></i> Home</a></li>
-						<li><a href="dashboard.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-columns"></i> Dashboard</a></li>
-						<li><a href="sales.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-chart-line"></i> Sales</a></li>
-						<li><a href="inventory.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-list"></i> Inventory</a></li>
-						<li><a href="Purchase.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-receipt"></i> Purchase</a></li>
-						<li><a href="orders.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-file-invoice-dollar"></i> Orders</a></li>
-						<li><a href="invlogs.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-clipboard-list"></i> Inventory Logs</a></li>
-						<li><a href="topseller.html" class="collapsible-header waves-effect arrow-r"><i class="fas fa-check-double"></i> Top Seller</a></li>
-						<li><a href="#" class="collapsible-header waves-effect" onclick="logOut()"><i class="fas fa-power-off"></i>
-						Logout</a></li>
-					</ul>
-
-
-				</li>
-
-				<!--/. Side navigation links -->
-			</ul>
-			<div class="sidenav-bg mask-strong"></div>
-		</div>
-		<!--/. Sidebar navigation -->
-		<!-- Navbar -->
-		<nav class="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
-			<!-- SideNav slide-out button -->
-			<div class="float-left">
-				<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
-			</div>
-			<!-- Breadcrumb-->
-			<div class="breadcrumb-dn mr-auto">
-				<p>Kanto Silog </p>
-			</div>
-
-		</nav>
-
+	
 	</header>
-
+	<br>
+	<ul class="nav nav-tabs nav-justified md-tabs" id="myTabJust" role="tablist" style="background-color:#314755">
+		<li class="nav-item">
+			<a class="nav-link active" id="home-tab-just" data-toggle="" href="index.html" role="tab" aria-controls="home-just"
+			aria-selected="true">Home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" id="profile-tab-just" data-toggle="tab" href="#profile-just" role="tab" aria-controls="profile-just"
+			aria-selected="false">My Account</a>
+		</li>
+	</ul>
+	<br>
 	<main>
 		<div class="container">
 			<div class="col-12">
-				<h3><b>Dashboard</b></h3>
+				<h3 style="padding-top: 10px;padding-bottom: 5px"><b>Dashboard</b></h3>
 			</div>
 			<div class="col-12">
-				<div class="card">
-					<div class="card-body">
-						<div class="row">
-							<div class="col-12">
-								<div class="row">
-									<div class="col-4">
-										<i class="fas fa-chart-line white-text fa-2x SalesIcon"></i>
-									</div>
-									<div class="col-7">
-										<h4 class="card-title blue-text CardHead" id="overall">P 52352.00</h4>
-										<h4 class="CardTitle">Overall Sales</h4>
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-12">
+									<div class="container">
+										<h4 class="text-center blue-text" id="overall"></h4>
+										<h4 class="text-center">Overall Sales</h4>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-
 			<br>
 			<div class="col-12">
 				<div class="card">
@@ -116,7 +75,7 @@
 						<div class="row">
 							<div class="col-12">
 								<div class="container">
-									<h2 class="text-center red-text" id="bestseller">523</h2>
+									<h2 class="text-center red-text" id="bestseller"></h2>
 									<h4 class="text-center">Today's Best Seller</h4>
 								</div>
 							</div>
@@ -126,18 +85,6 @@
 			</div>
 			<br>
 		</div>
-		<div class="container">
-			<div class="col-12">
-				<div class="card">
-					<div class="card-body">
-						<div class="row">
-							<canvas id=""></canvas>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 	</main>
 
 

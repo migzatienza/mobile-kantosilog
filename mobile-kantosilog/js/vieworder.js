@@ -1,32 +1,5 @@
 var url="http://localhost/mobile-kantosilog/";
-viewOrders();
 
-function viewOrders(){
-	$.ajax({
-		url:url+"php/codes.php?viewOrders",
-		method:"GET",
-		dataType:"JSON",
-		success:function(data){
-			var body="";
-			data.map(e=>{
-				body+='<tr>';
-				if(e.fld_status == 'Not Yet'){
-					body+='<td><button onclick="completeOrder(\''+e.fld_orderid+'\')" class="btn btn-rounded btn-sm red" >Complete Order</button></td>';
-				}else if(e.fld_status == 'Completed'){
-					body+='<td><button onclick="orderList(\''+e.fld_orderid+'\')" class="btn btn-rounded btn-sm blue" data-toggle="modal" data-target="#ModalViewOrder">View Order</button></td>';	
-				}
-				body+='<td><b>'+e.fld_orderid+'</b></td>';
-				body+='<td><b>'+e.fld_staff+'</b></td>';
-				body+='<td>₱<b>'+e.fld_maintotal+'.00</b></td>';
-				body+='<td>₱<b>'+e.fld_payment+'.00</b></td>';
-				body+='<td>₱<b>'+e.fld_change+'.00</b></td>';
-				body+='<td><b>'+e.fld_date+'</b></td>';
-				body+='</tr>';
-			})
-			$('#viewLogs').html(body);
-		}
-	})
-}
 
 function orderList(id){
 	$.ajax({
@@ -66,7 +39,7 @@ function completeOrder(id){
 					swal("Order Completed!", {
 						icon: "success",
 					});
-					viewOrders();
+					vieworder();
 				}
 			});
 		} else {
@@ -75,6 +48,34 @@ function completeOrder(id){
 	});
 }
 
+vieworder();
+function vieworder(){
+	$.getJSON(url+"php/codes.php?viewOrders", function(data){
+		var body="";
+		data.map(e=>{
+			body+='<div class="toast-header">';
+			body+='<svg class=" rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"focusable="false" role="img">';
+			if(e.fld_status == 'Not Yet'){
+				body+='<rect fill="red" width="100%" height="100%" /></svg>';
+			}else{
+				body+='<rect fill="#007aff" width="100%" height="100%" /></svg>';
+			}
+			body+='<strong class="mr-auto">Order </strong>';
+			body+='<small>'+e.fld_date+'</small>';
+			body+='<small style="margin-left: 55px">₱'+e.fld_maintotal+'</small>';
+			if(e.fld_status =='Not Yet'){
+				body+='<button type="button" onclick="completeOrder(\''+e.fld_orderid+'\')" class="ml-2 mb-1 close">';
+				body+='<i class="fa fa-pause"></i></button></div>';
+			}else{
+				body+='<button type="button" onclick="orderList(\''+e.fld_orderid+'\')" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" data-toggle="modal" data-target="#ModalViewOrder">';
+				body+='<i class="fa fa-eye"></i></button></div>';
+			}
+
+			body+='<div class="toast-body">Order No. '+e.fld_orderid+'<small style="margin-left: 53px">6 orders</small></div><br>';
+		});
+		$('#viewLogss').html(body);
+	})
+}
 
 
 

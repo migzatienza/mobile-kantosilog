@@ -114,6 +114,8 @@ if(isset($_GET['register'])){
 	$password = $_POST['password'];
 	$email = $_POST['email'];
 	$fullname = $_POST['fullname'];
+	$firstname = $_POST['firstname'];
+	$lastname = $_POST['lastname'];
 	$remarks = 'New User';
 	$status = 'Inactive';
 	$list = array(
@@ -122,9 +124,19 @@ if(isset($_GET['register'])){
 		"user_email" => $email,
 		"user_fullname" => $fullname,
 		"user_remarks" => $remarks,
+		"user_firstname" => $firstname,
+		"user_lastname" => $lastname,
 		"user_status" => $status
 	);
-	$obj->insert_record("tbl_users",$list);
+	$select = "SELECT * FROM tbl_users WHERE user_name ='$username' OR user_email ='$email'";
+	$sql1 = mysqli_query($this->con, $select);
+	$res = mysqli_num_rows($sql1);
+	if($res == 0){
+		$obj->insert_record("tbl_users",$list);	
+	}else{
+		echo json_encode(array('response' => 'error'));
+	}
+	
 }
 if(isset($_GET['asd'])){
 	$obj->order_by_one("tbl_users", "user_id", "DESC", "1");
